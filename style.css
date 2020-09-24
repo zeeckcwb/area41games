@@ -1,0 +1,491 @@
+@font-face{
+	font-family: quicksand;
+	src: url(fonts/quicksand.ttf);
+}
+
+@font-face{
+	font-family: gameria;
+	src: url(fonts/gameria.ttf);
+}
+
+body{
+	font-family: quicksand;
+	padding: 0px;
+	margin: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+
+/*---------------- MODAL CONTATO ----------------*/
+.modal {
+	display: grid;
+    align-items: center;
+	position: fixed;
+	top: 20%;
+	right: 10%;
+	bottom: 40%;
+	left: 10%;
+	padding: 0 10px 0 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: rgba(224,224,224, 0.95);
+	border-radius: 30px;
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modal:target {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.fechar {
+	position: absolute;
+	width: 30px;
+	right: -5px;
+	top: -5px;
+	text-align: center;
+	line-height: 30px;
+	background: #ff4545;
+	border-radius: 50%;
+	font-size: 1rem;
+	font-weight: 700;
+	color: #000;
+	text-decoration: none;
+}
+
+.contact-modal{
+	font-size: 1.1rem;
+	padding-top: 30px;
+}
+
+.icone-modal{
+	font-size: 40px;
+	color: #000;
+}
+
+.social-modal{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 50px;
+}
+
+.social-modal ul{
+	padding: 0;
+}
+
+.social-modal ul li{
+	list-style: none;
+	float: right;
+}
+
+.face-modal{
+	padding: 0 25px 0 25px;
+}
+
+.contact-modal p{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.location{
+	margin-top: 0px;
+}
+
+.email{
+	text-decoration: none;
+}
+
+.phone{
+	padding-bottom: 20px;
+}
+
+@media(min-width: 768px){
+	.modal{
+		width: 300px;
+		height: 300px;
+		margin: auto;
+		top: 15%;
+		bottom: 60%;
+	}
+}
+
+
+/*---------------- CABEÇALHO ----------------*/
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+	padding: 0 100px;
+    background: #000;
+    width: 100%;
+	box-sizing: border-box;
+	height: 70px;
+	line-height: 70px;
+	white-space: nowrap;
+}
+
+header .logo{
+	width: 100px;
+	height: 70px;
+	line-height: 70px;
+    float: left;
+}
+
+header .logo img{
+	width: 100%;
+	vertical-align: middle;
+}
+
+header nav{
+	float: right;
+}
+
+header nav ul{
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+header nav ul li{
+	list-style: none;
+}
+
+header nav ul li a{
+    height: 50px;
+	line-height: 50px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	padding: 0 20px;
+	color: #fff;
+	text-decoration: none;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active{
+    color: #fff;
+	background: #589d33;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
+	border-radius: 5px;
+}
+
+.menu-toggle{
+	color: #fff;
+	float: right;
+	line-height: 50px;
+	font-size: 24px;
+	cursor: pointer;
+	display: none;
+	line-height: 70px;
+
+}
+
+@media (max-width: 991px){
+	header{
+		padding: 0 20px;
+	}
+
+	.menu-toggle{
+		display: block;
+		float: left;
+	}
+
+	header .logo{
+		float: right;
+	}
+
+	header nav{
+		position: absolute;
+        width: 100%;      
+		top: 0;
+        left: -100%;
+		transition: 0.5s;
+		background: rgba(0,0,0,.7);
+		border-radius: 10px;
+	}
+
+	header nav.active{
+		left: 0;
+		top: 70px;
+	}
+
+	header nav ul{
+		display: block;
+		text-align: center;
+	}
+}
+
+/*---------------- INTRODUÇÃO ----------------*/
+
+#intro{
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(images/background-3.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.background{
+	width: 70%;
+}
+
+.background h1{
+	color: #e3e3e3;
+	margin: auto;
+	text-align: center;
+	font-family: gameria;
+	font-size: 2.5rem;
+	letter-spacing: 4px;
+	padding-top: 50px;
+}
+
+.background p{
+	font-size: 1.2rem;
+	color: #e3e3e3;
+	margin: auto;
+	text-align: center;
+	padding-top: 30px;
+	font-weight: 700; 
+}
+
+@media (min-width: 768px){
+	.background{
+		width: 80%;
+	}
+
+	.background h1{
+		font-size: 2.5rem;
+	}
+
+	.background p{
+		font-size: 1.3rem;
+	}
+}
+
+@media (min-width: 1200px){
+	.background{
+		width: 900px;
+	}
+
+	.background h1{
+		font-size: 4rem;
+	}
+
+	.background p{
+		font-size: 1.6rem;
+	}
+}
+
+
+/*---------------- SOBRE ----------------*/
+
+#about{
+	background: url(images/background-about.jpg);
+	background-size: cover;
+	padding-top: 50px;
+}
+
+.company{
+	width: 70%;
+	margin: auto;
+	text-align: center;
+	color: #fff;
+	padding: 40px 40px 40px 40px;
+	background-color: rgba(04,04,04, 0.8);
+	border: 1px solid #2d6024;
+}
+
+.company h1{
+	padding-bottom: 30px;
+	font-size: 1.8rem;
+}
+
+.company p{
+	font-size: 1rem;
+}
+
+@media(min-width: 768px){
+	.company h1{
+		font-size: 2rem;
+	}
+
+	.company p{
+		font-size: 1.2rem;
+	}
+}
+
+@media(min-width: 1280px){
+	.company{
+		width: 50%;
+	}
+}
+
+
+/*---------------- MEMBERS ----------------*/
+
+.members{
+	width: 70%;
+	margin: auto;
+	padding-top: 100px;
+	text-align: center;
+}
+
+.members h3{
+	padding-bottom: 20px;
+	font-size: 1.5rem;
+	color: #fff;
+}
+
+.members p{
+	font-size: 1rem;
+	color: #fff;
+}
+
+.person{
+	width: 80%;
+	border-radius: 20px;
+}
+
+.carlos{
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+.jana{
+	text-align: center;
+	padding: 40px 0 40px 0;
+}
+
+.zeck{
+	text-align: center;
+	padding: 40px 0 40px 0;
+}
+
+@media(min-width: 768px){
+	.members{
+		width: 80%;
+		margin: auto;
+		padding-top: 100px;
+	}
+
+	.members h3{
+		font-size: 2rem
+	}
+
+	.members p{
+		font-size: 1.2rem;
+	}
+
+	.person{
+		width: 400px;
+		height: 300px;
+		border-radius: 20px;
+		margin-right: 50px;
+	}
+
+	.carlos{
+		text-align: left;
+		display: flex;
+		margin: auto;
+		
+	}
+
+	.jana{
+		text-align: left;
+		display: flex;
+		margin: auto;
+		
+	}
+
+	.zeck{
+		text-align: left;
+		display: flex;
+		margin: auto;
+		
+	}
+}
+
+@media(min-width: 1280px){
+	.members{
+		width: 50%;
+	}
+
+	.person{
+		width: 40%;
+		border-radius: 20px;
+		margin-right: 50px;
+	}
+}
+
+
+/*---------------- RODAPÉ ----------------*/
+.icone{
+	font-size: 2.5rem;
+	color: #6aa443;
+}
+
+#footer{
+	background: #000;
+	height: 200px;
+	border-top: 2px solid #2d6024;
+}
+
+.social-media{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+    align-items: center;
+}
+
+.social ul{
+	padding: 0;
+}
+
+.social ul li{
+	display: inline-block;
+	padding: 30px 20px 0 20px;
+}
+
+.copyright{
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+    text-align: center;
+}
+
+@media(min-width: 1280px){
+	.icone{
+		font-size: 2.8rem;
+	}
+
+	.social ul li{
+		padding: 30px 50px 0 50px;
+	}
+
+	.copyright{
+		letter-spacing: 1px;
+	}
+}
